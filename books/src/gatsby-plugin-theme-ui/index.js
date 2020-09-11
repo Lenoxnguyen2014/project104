@@ -7,8 +7,8 @@ export default {
     modes: {
       dark: {
         text: '#fff',
-        background: '#000',
-        primary: '#FFDF00',
+        background: '#7f7f7f',
+        primary: '#CFB53B',
       }
     }
   },
@@ -20,13 +20,14 @@ export default {
       color: 'primary',
       mt: 4,
       mb: 2,
-      fontSize: [3, 4, 5]
+      fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
     },
     a: {
       color: 'primary',
       '&:hover': {
-        bg: 'dark',
-      },
+        background: '#E6BE8A',
+        color: 'white',
+      }
     },
     root: {
       fontFamily: 'body',
@@ -34,13 +35,14 @@ export default {
       lineHeight: 'body',
     },
     p: {
-      fontSize: [2, 3],
+      fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
       padding: "1rem" 
     },
     h2: {
       variant: 'text.heading',
-      fontSize: [4, 5],
+      fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   },
+
   },
   fonts: {
     body: "system-ui, sans-serif",

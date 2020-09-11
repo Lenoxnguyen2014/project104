@@ -1,13 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Kenny DM`,
+    title: `Kenny DN`,
     description: `Kenny Norway professional site`,
     author: `@lenguyen`,
     menuLinks:[
-      {
-        name: 'home',
-        Link: '/'
-      },
       {
         name: 'about',
         Link: '/about'

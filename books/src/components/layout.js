@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
+import { Styled, Flex} from 'theme-ui'
 import Header from "./header"
 import "./layout.css"
 
@@ -30,22 +30,20 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header menuLinks={data.site.siteMetadata.menuLinks} siteTitle={data.site.siteMetadata.title} />
-      <div
+      <Styled.root
         style={{
           margin: `0 auto`,
           maxWidth: 960,
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
-        <main style={{
-          paddingTop: "5%"
-        }}>{children}</main>
+        <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.workingwithle.com">Le</a>
         </footer>
-      </div>
+      </Styled.root>
     </>
   )
 }
