@@ -5,6 +5,10 @@ module.exports = {
     author: `@lenguyen`,
     menuLinks:[
       {
+        name: 'home',
+        Link: '/'
+      },
+      {
         name: 'about',
         Link: '/about'
       },
@@ -14,11 +18,7 @@ module.exports = {
       },{
         name: 'blogs',
         Link: '/blogs'
-      },{
-        name: 'podcasts',
-        Link: '/podcasts'
       }
-
     ]
   },
   plugins: [

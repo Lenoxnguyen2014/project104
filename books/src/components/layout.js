@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { Styled, Flex} from 'theme-ui'
 import Header from "./header"
+import Footer from "./footer"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -29,7 +30,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header menuLinks={data.site.siteMetadata.menuLinks} siteTitle={data.site.siteMetadata.title} />
+      <Header  menuLinks={data.site.siteMetadata.menuLinks} siteTitle={data.site.siteMetadata.title} />
       <Styled.root
         style={{
           margin: `0 auto`,
@@ -38,11 +39,7 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.workingwithle.com">Le</a>
-        </footer>
+        <Footer menuLinks={data.site.siteMetadata.menuLinks}/>
       </Styled.root>
     </>
   )

@@ -26,7 +26,16 @@ export default {
       color: 'primary',
       '&:hover': {
         background: '#E6BE8A',
-        color: 'white',
+        color: '#000',
+      }
+    },
+    buttons: {
+      primary: {
+        color: 'background',
+        bg: 'primary',
+        '&:hover': {
+          bg: 'yellow',
+        }
       }
     },
     root: {
@@ -60,4 +69,13 @@ export default {
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  links: {
+    nav: {
+      px: 2,
+      py: 1,
+      textTransform: 'uppercase',
+      letterSpacing: '0.2em',
+    }
+  },  
+
 }
