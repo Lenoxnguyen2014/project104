@@ -1,3 +1,6 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
   siteMetadata: {
     title: `Kenny DN`,
@@ -74,6 +77,7 @@ module.exports = {
           "**/users",
           // edit custom post type here
           "**/books",
+          "**/stripe-payments"
         ],
         excludedRoutes: [],
         normalizer: function ({ entities }) {
@@ -92,5 +96,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-lodash`,
+    {
+      resolve: `gatsby-source-stripe`,
+      options: {
+        objects: ["Price"],
+        secretKey: process.env.STRIPE_SECRET_KEY,
+        downloadFiles: false,
+      },
+    }
   ],
 }
