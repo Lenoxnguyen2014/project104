@@ -4,7 +4,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Kenny DN`,
-    description: `Kenny Norway professional site`,
+    description: `Kenny Norway`,
     author: `@lenguyen`,
     menuLinks:[
       {
@@ -54,7 +54,7 @@ module.exports = {
          * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
          * Example : 'demo.wp-api.org' or 'www.example-site.com'
          */
-        baseUrl: `http://192.168.33.10/kenny/`,
+        baseUrl: `http://192.168.33.10/ken/`,
         // The protocol. This can be http or https.
         protocol: `http`,
         // Indicates whether the site is hosted on wordpress.com.
