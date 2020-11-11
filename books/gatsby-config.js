@@ -54,7 +54,7 @@ module.exports = {
          * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
          * Example : 'demo.wp-api.org' or 'www.example-site.com'
          */
-        baseUrl: `http://192.168.33.10/ken/`,
+        baseUrl: `http://54.149.84.67/`,
         // The protocol. This can be http or https.
         protocol: `http`,
         // Indicates whether the site is hosted on wordpress.com.
@@ -96,13 +96,5 @@ module.exports = {
       },
     },
     `gatsby-plugin-lodash`,
-    {
-      resolve: `gatsby-source-stripe`,
-      options: {
-        objects: ["Price"],
-        secretKey: process.env.STRIPE_SECRET_KEY,
-        downloadFiles: false,
-      },
-    }
   ],
 }

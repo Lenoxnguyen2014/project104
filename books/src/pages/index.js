@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Link, graphql } from "gatsby"
 import logo from "../images/KennyDN.png"
+// import Logo from "./logo"
 import { Grid, Box, Button } from 'theme-ui'
 import Img from "gatsby-image/withIEPolyfill"
 import podcast from '../images/live-podcast.png'
@@ -20,6 +21,7 @@ function IndexPage({data}) {
   <SEO title="blogs" />
   <Grid width={[100,null,200 ]}>
   <Box>
+    {/* <Logo/> */}
     <img src={logo}/>
   </Box>
   </Grid>
