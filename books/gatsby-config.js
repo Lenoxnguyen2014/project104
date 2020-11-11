@@ -13,7 +13,7 @@ module.exports = {
       },
       {
         name: 'about',
-        Link: '/about'
+        Link: '/about-me'
       },
       {
         name: 'books',

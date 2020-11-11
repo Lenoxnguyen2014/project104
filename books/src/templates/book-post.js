@@ -4,11 +4,10 @@ import SEO from "../components/seo"
 import Img from "gatsby-image"
 import { graphql } from "gatsby"
 import { Box, Grid } from "theme-ui"
-import Checkout from "../components/checkout"
+// import Checkout from "../components/checkout"
 
 function BlogPost({ data }) {
   const book = data.allWordpressWpBooks.edges[0].node
-  console.log(book)
   return (
     <Layout>
         <h1>{book.title}</h1>
@@ -16,7 +15,7 @@ function BlogPost({ data }) {
     <Box style={{textAlign:"center"}}>
         <Img key={book.featured_media.localFile.childImageSharp.resolutions.src} fluid={book.featured_media.localFile.childImageSharp.fluid} />
         <br />
-        <Checkout />
+        {/* <Checkout /> */}
       </Box>
       <Box>
         <div dangerouslySetInnerHTML={{ __html: book.content }} />
