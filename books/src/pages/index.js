@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 // import Image from "../components/image"
 import SEO from "../components/seo"
 import { Link, graphql } from "gatsby"
-import logo from "../images/KennyDN.png"
+import logo from "../images/kenny1.png"
 // import Logo from "./logo"
 import { Grid, Box, Button } from 'theme-ui'
 import Img from "gatsby-image/withIEPolyfill"
