@@ -12,15 +12,11 @@ module.exports = {
         Link: '/'
       },
       {
-        name: 'about',
-        Link: '/about-me'
-      },
-      {
         name: 'books',
         Link: '/books'
       },{
-        name: 'blogs',
-        Link: '/blogs'
+        name: 'essays',
+        Link: '/essays'
       }
     ]
   },

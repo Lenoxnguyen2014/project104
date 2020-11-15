@@ -1,6 +1,7 @@
 import React from "react"
 import { jsx } from "theme-ui"
 import { Styled, Flex,  NavLink,Grid, Box, Button} from 'theme-ui'
+import {Link} from "gatsby"
 import './switch-slider.css'
 import logo from '../images/KennyDN.png'
 import search from '../images/search.png'
@@ -25,7 +26,9 @@ function Footer() {
     <img src={twitter} style={{maxWidth: "70px"}} />
     </Box>
     <Box>
+      <Link to="https://donorbox.org/test1-17">
     <Button  variant='primary' style={{padding: "20px"}}>Buy me a coffee</Button>
+    </Link>
     </Box>
     </Grid>
     <div style={{textAlign: "center"}}>

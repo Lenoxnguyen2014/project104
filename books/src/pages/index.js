@@ -7,9 +7,9 @@ import logo from "../images/kenny1.png"
 // import Logo from "./logo"
 import { Grid, Box, Button } from 'theme-ui'
 import Img from "gatsby-image/withIEPolyfill"
-import podcast from '../images/live-podcast.png'
+import kennydnface from '../images/kennydnface.jpg'
 import subscribe from '../images/subscribe.png'
-
+import Slide from 'react-reveal/Slide';
 
 function IndexPage({data}) {
   const about = data.allWordpressPage.edges[0].node
@@ -27,7 +27,11 @@ function IndexPage({data}) {
   </Grid>
   <Box bg='primary' >
     <div style={{padding: "6vw", boxShadow: "5px 10px"}}>
-    <p>It was time for a change. After 30 years of stock market, Ken Norquay rebelled: he decided to follow his passion and invites you to do the same. What’s his passion? YOU. Why do you think what you think and act the way you act? Mostly he writes about you and mostly, in his podcasts, he talks about you. Check it out.
+      <p>
+    His problem(s) started at age 38: mid-life crisis. He called ‘em male menopause. They came one after another for the rest of his life. No, he did not buy a red convertible and chase women in their twenties… well, not at first. Kenny rolled from one mid-life crisis to next, from one weird experience to another. Now he’s an “older gentleman” who has gone well beyond his mid-life. Now he has one geezer crises, after another. After all this rocking and rolling, Kenny is certain of one thing. He doesn’t count. You count. His life isn’t all that important. Yours is. He created this website in hopes that he could amuse you and help you learn a bit of what he has learned. These are his words:
+	“When you were in high school, did you study the poem Ulysses, by Tennyson? It’s about the legendary explorer of ancient Greece, who fought the brave fight, won some battles and lost others. In the poem, we see Odysseus, old and worn out, yearning for one more adventure: “I cannot rest from travel: I will drink life to the lees…” 
+ I invite you to join me for one more adventure, always remembering: “…that which we are, we are, one equal temper of heroic hearts, made weak by time and fate, but strong in will to strive, to seek, to find and not to yield.”
+Our adventures will be literary. We will follow trails of ancient wisdom-words into the unknown realm of our inner worlds.
     </p>
     <p>
     Kenny DN
@@ -36,19 +40,27 @@ function IndexPage({data}) {
   </Box>
   {/* render current book */}
   <h1 style={{paddingTop: "2%"}}>New Book Release</h1>
+  <Slide bottom>
   <Grid gap={2} columns={[2, '1fr 2fr']} style={{paddingTop: "2%"}}>
   <Box >
     <Img key={current_book.featured_media.localFile.childImageSharp.resolutions.src} fluid={current_book.featured_media.localFile.childImageSharp.fluid} />
   </Box>
   <Box>
   <div dangerouslySetInnerHTML={{ __html: current_book.excerpt }} />
+  <Link to= {"/books/" + current_book.slug}>
+     <Button>
+          Read more
+     </Button>
+ </Link>
    </Box>
   </Grid>
+  </Slide>
 
-  <h1 style={{paddingTop: "2%"}}>{about.title}</h1>
+
+  {/* <h1 style={{paddingTop: "2%"}}>{about.title}</h1> */}
   <Grid gap={2} columns={[2, '1fr 2fr']} style={{paddingTop: "2%"}}>
 
-  <Box >
+  {/* <Box >
     <Img key={about.featured_media.localFile.childImageSharp.resolutions.src} fluid={about.featured_media.localFile.childImageSharp.fluid} />
   </Box>
   <Box>
@@ -57,13 +69,13 @@ function IndexPage({data}) {
      <Button>
           Read more
      </Button>
- </Link>  </Box>
+ </Link>  </Box> */}
   </Grid>
 
   {/* render Blogs and Podcast button */}
   <Grid width={[100,null,100 ]} style={{paddingTop: "10%"}}>
   <Box>
-    <img src={podcast} />
+    <img src={kennydnface} />
   </Box>
   <Box style={{display: "block", textAlign:"center", padding: "10%"}}>
   {/* <img src={subscribe} /> */}
@@ -75,7 +87,6 @@ function IndexPage({data}) {
   <p><Button>Subscribe</Button> </p>
   </Box>
   </Grid>
-
 </Layout>
   )
 }
