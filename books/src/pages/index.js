@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import Layout from "../components/layout"
 // import Image from "../components/image"
 import SEO from "../components/seo"
@@ -10,10 +10,34 @@ import Img from "gatsby-image/withIEPolyfill"
 import kennydnface from '../images/kennydnface.jpg'
 import subscribe from '../images/subscribe.png'
 import Slide from 'react-reveal/Slide';
+import addToMailchimp from 'gatsby-plugin-mailchimp'
+
 
 function IndexPage({data}) {
   const about = data.allWordpressPage.edges[0].node
   const current_book = data.allWordpressWpBooks.edges[0].node
+  const [email, setEmail] = useState('')
+  const [FNAME, setFname] = useState('')
+
+  function handleChangeEmail(e){
+    setEmail(e.target.value)
+  }
+
+  function handleChangeFname(e){
+    setFname(e.target.value)
+  }
+
+  function handleSubmit(e){
+    e.preventDefault()
+    addToMailchimp(email, {FNAME}) // listFields are optional if you are only capturing the email address.
+    .then(data => {
+      console.log(data)
+    })
+    .catch((e) => {
+      console.log(e)
+    })
+
+  }
 
   console.log(current_book)
   return(
@@ -48,7 +72,7 @@ Our adventures will be literary. We will follow trails of ancient wisdom-words i
   <Box>
   <div dangerouslySetInnerHTML={{ __html: current_book.excerpt }} />
   <Link to= {"/books/" + current_book.slug}>
-     <Button>
+     <Button style={{marginLeft:"center"}}>
           Read more
      </Button>
  </Link>
@@ -81,10 +105,11 @@ Our adventures will be literary. We will follow trails of ancient wisdom-words i
   {/* <img src={subscribe} /> */}
   <h2>Subscribe my website to get new update</h2>
   <p>I promise there is no spam</p>
-  <p><input type="text" /> First name </p>
-  <p><input type="text" /> Last name </p>
-  <p><input type="email" /> Your email </p>
-  <p><Button>Subscribe</Button> </p>
+  <form onSubmit={handleSubmit}>
+  <p>First name: <input type="text" onChange={handleChangeFname} value={FNAME}/></p>
+  <p>Email: <input type="email" onChange={handleChangeEmail} value={email}/></p>
+  <p><Button value="submit">Subscribe</Button> </p>
+  </form>
   </Box>
   </Grid>
 </Layout>
