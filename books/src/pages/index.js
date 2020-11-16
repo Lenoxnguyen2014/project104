@@ -79,7 +79,7 @@ Our adventures will be literary. We will follow trails of ancient wisdom-words i
   <Box>
   <div dangerouslySetInnerHTML={{ __html: current_book.excerpt }} />
   <Link to= {"/books/" + current_book.slug}>
-     <Button style={{marginLeft:"center"}}>
+     <Button style={{marginLeft:"50%"}}>
           Read more
      </Button>
  </Link>
