@@ -11,13 +11,14 @@ import kennydnface from '../images/kennydnface.jpg'
 import subscribe from '../images/subscribe.png'
 import Slide from 'react-reveal/Slide';
 import addToMailchimp from 'gatsby-plugin-mailchimp'
+import swal from 'sweetalert';
 
 
 function IndexPage({data}) {
   const about = data.allWordpressPage.edges[0].node
   const current_book = data.allWordpressWpBooks.edges[0].node
-  const [email, setEmail] = useState('')
-  const [FNAME, setFname] = useState('')
+  const [email, setEmail] = useState('yourmail@mail.com')
+  const [FNAME, setFname] = useState('your first name')
 
   function handleChangeEmail(e){
     setEmail(e.target.value)
@@ -31,10 +32,16 @@ function IndexPage({data}) {
     e.preventDefault()
     addToMailchimp(email, {FNAME}) // listFields are optional if you are only capturing the email address.
     .then(data => {
+      swal({
+        title: data.result,
+        text: data.msg,
+        button: "OK",
+      });
       console.log(data)
     })
     .catch((e) => {
       console.log(e)
+      alert(e)
     })
 
   }
@@ -106,8 +113,8 @@ Our adventures will be literary. We will follow trails of ancient wisdom-words i
   <h2>Subscribe my website to get new update</h2>
   <p>I promise there is no spam</p>
   <form onSubmit={handleSubmit}>
-  <p>First name: <input type="text" onChange={handleChangeFname} value={FNAME}/></p>
-  <p>Email: <input type="email" onChange={handleChangeEmail} value={email}/></p>
+  <p><input type="text" onChange={handleChangeFname} value={FNAME} placeholder={FNAME}/></p>
+  <p><input type="email" onChange={handleChangeEmail} value={email} placeholder={email}/></p>
   <p><Button value="submit">Subscribe</Button> </p>
   </form>
   </Box>
