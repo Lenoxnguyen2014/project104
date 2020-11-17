@@ -34,7 +34,7 @@ const essaysQuery = `{
   const queries = [
     {
       query: booksQuery,
-      transformer: ({ data }) => data.allWordpressBooks.edges.map(({node})=> node)
+      transformer: ({ data }) => data.allWordpressWpBooks.edges.map(({node})=> node)
     },
     { 
       query: essaysQuery,
