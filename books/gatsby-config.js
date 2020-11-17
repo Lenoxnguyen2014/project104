@@ -12,7 +12,6 @@ const booksQuery = `{
         objectID:id
         title
         content
-        slug
       }
     }
   }
@@ -35,7 +34,6 @@ const essaysQuery = `{
     {
       query: booksQuery,
       transformer: ({ data }) => data.allWordpressWpBooks.edges.map(({node})=> node),
-      matchFields: ['slug', 'books'], // Array<String> overrides main match fields, optional
     },
     { 
       query: essaysQuery,
