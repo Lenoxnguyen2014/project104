@@ -12,6 +12,7 @@ const booksQuery = `{
         objectID:id
         title
         content
+        slug
       }
     }
   }
