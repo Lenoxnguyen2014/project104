@@ -11,8 +11,8 @@ function Blogs({ data }) {
     <SEO title="blogs" />
     <h1>Essays</h1>
     {data.allWordpressPost.edges.map(({ node }) => (
-      <div key={'/essays/' + node.slug} >
-        <Styled.a as={Link}  to={'/essays/' + node.slug}>
+      <div key={node.slug} >
+        <Styled.a as={Link}  to={node.slug}>
         <h2>{node.title}</h2>
         </Styled.a>
         <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
