@@ -32,10 +32,10 @@ const essaysQuery = `{
 }`;
 
   const queries = [
-    {
-      query: booksQuery,
-      transformer: ({ data }) => data.allWordpressBooks.edges.map(({node})=> JSON.parse(JSON.stringify(node)))
-    },
+    // {
+    //   query: booksQuery,
+    //   transformer: ({ data }) => data.allWordpressBooks.edges.map(({node})=> JSON.parse(JSON.stringify(node)))
+    // },
     {
       query: essaysQuery,
       transformer: ({ data }) => data.allWordpressPost.edges.map(({node})=> JSON.parse(JSON.stringify(node)))
