@@ -5,18 +5,17 @@ require("dotenv").config({
 })
 
  
-// const booksQuery = `{
-//   books:allWordpressWpBooks{
-//     edges {
-//       node {
-//         objectID:id
-//         title
-//         content
-        
-//       }
-//     }
-//   }
-// }`;
+const booksQuery = `{
+  allWordpressWpBooks{
+    edges {
+      node {
+        objectID:id
+        title
+        content
+      }
+    }
+  }
+}`;
 
 const essaysQuery = `{
   allWordpressPost{
@@ -32,11 +31,10 @@ const essaysQuery = `{
 }`;
 
   const queries = [
-    // {
-    //   query: booksQuery,
-    //   // transformer: ({ data }) => data.allWordpressWpBooks.edges.map(pageToAlgoliaRecord),
-    //   transformer: ({ data }) => data.books.edges.map(({ node }) => nodclee),
-    // },
+    {
+      query: booksQuery,
+      transformer: ({ data }) => data.allWordpressBooks.edges.map(({node})=> JSON.parse(JSON.stringify(node)))
+    },
     {
       query: essaysQuery,
       transformer: ({ data }) => data.allWordpressPost.edges.map(({node})=> JSON.parse(JSON.stringify(node)))
