@@ -34,7 +34,8 @@ const essaysQuery = `{
   const queries = [
     {
       query: booksQuery,
-      transformer: ({ data }) => data.allWordpressWpBooks.edges.map(({node})=> node)
+      transformer: ({ data }) => data.allWordpressWpBooks.edges.map(({node})=> node),
+      matchFields: ['slug', 'books'], // Array<String> overrides main match fields, optional
     },
     { 
       query: essaysQuery,
