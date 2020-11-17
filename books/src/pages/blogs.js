@@ -9,10 +9,10 @@ function Blogs({ data }) {
   return (
     <Layout>
     <SEO title="blogs" />
-    <h1>Blogs</h1>
+    <h1>Essays</h1>
     {data.allWordpressPost.edges.map(({ node }) => (
-      <div key={'/blogs/' + node.slug} >
-        <Styled.a as={Link}  to={'/blogs/' + node.slug}>
+      <div key={'/essays/' + node.slug} >
+        <Styled.a as={Link}  to={'/essays/' + node.slug}>
         <h2>{node.title}</h2>
         </Styled.a>
         <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />

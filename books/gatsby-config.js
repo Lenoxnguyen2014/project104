@@ -1,6 +1,50 @@
+const { object, node } = require("prop-types");
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
+
+ 
+// const booksQuery = `{
+//   books:allWordpressWpBooks{
+//     edges {
+//       node {
+//         objectID:id
+//         title
+//         content
+        
+//       }
+//     }
+//   }
+// }`;
+
+const essaysQuery = `{
+  allWordpressPost{
+    edges {
+      node {
+        objectID:id
+        title
+        content
+        slug
+      }
+    }
+  }
+}`;
+
+  const queries = [
+    // {
+    //   query: booksQuery,
+    //   // transformer: ({ data }) => data.allWordpressWpBooks.edges.map(pageToAlgoliaRecord),
+    //   transformer: ({ data }) => data.books.edges.map(({ node }) => nodclee),
+    // },
+    {
+      query: essaysQuery,
+      transformer: ({ data }) => data.allWordpressPost.edges.map(({node})=> JSON.parse(JSON.stringify(node)))
+    
+    },
+  ]; 
+  
+
 module.exports = {
   siteMetadata: {
     title: `Kenny DN`,
@@ -21,6 +65,18 @@ module.exports = {
     ]
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAME,
+        queries,
+        chunkSize: 10000, // default: 1000
+        enablePartialUpdates: true,
+        matchFields: ['slug', 'modified'], // Array<String> overrides main match fields, optional
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -99,5 +155,12 @@ module.exports = {
           timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
       },
   },
+ {
+  resolve: `gatsby-plugin-polyfill-io`,
+  options: {
+     features: [`Array.prototype.map`, `fetch`]
+  },
+},
+
   ],
 }

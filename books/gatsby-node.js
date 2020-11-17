@@ -1,5 +1,6 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const { node } = require('prop-types')
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions
@@ -12,8 +13,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       })
     }
   }
-//   const createPaginatedPages = require('gatsby-paginate')
-//   const { node } = require('prop-types')
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return graphql(`
@@ -26,6 +26,7 @@ exports.createPages = ({ graphql, actions }) => {
                 date
                 slug
                 wordpress_id
+                objectID:id
               }
             }
           }
@@ -36,6 +37,7 @@ exports.createPages = ({ graphql, actions }) => {
             excerpt
             content
             slug
+            objectID:id
           }
         }
       }
@@ -46,6 +48,7 @@ exports.createPages = ({ graphql, actions }) => {
             excerpt
             content
             slug
+            objectID:id
           }
         }
       }
@@ -66,22 +69,24 @@ exports.createPages = ({ graphql, actions }) => {
 
     result.data.allWordpressPost.edges.forEach(({ node }) => {
       createPage({
-        path: `essays/` +  node.slug,
+        path: `/essays/` +  node.slug,
         component: path.resolve(`./src/templates/blog-post.js`),
         context: {
           // This is the $slug variable
           // passed to blog-post.js
+          id: node.id,
           slug: node.slug,
         },
       })
     }),
     result.data.allWordpressWpBooks.edges.forEach(({ node }) => {
       createPage({
-        path: `books/` + node.slug,
+        path: `/books/` + node.slug,
         component: path.resolve(`./src/templates/book-post.js`),
         context: {
           // This is the $slug variable
           // passed to blog-post.js
+          id: node.id,
           slug: node.slug,
         },
       })
