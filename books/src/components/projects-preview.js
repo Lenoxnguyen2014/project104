@@ -8,8 +8,7 @@ const ProjectsPreview = ({hit})=>{
     return(
       <div className="columns">
       <div className="column">
-      <Link to= {hit.slug} partiallyActive={true}
- >
+      <Link to= {'/books/' + hit.slug} >
       {hit.title}
       </Link>
       </div>
