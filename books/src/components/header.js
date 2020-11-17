@@ -8,6 +8,8 @@ import './switch-slider.css'
 import logo from '../images/KennyDN.png'
 import search from '../images/search.png'
 import Img from "gatsby-image"
+import Search from "../pages/search"
+
 
 function Header({ siteTitle, menuLinks}) {
   const [colorMode, setColorMode] = useColorMode()
@@ -30,7 +32,9 @@ function Header({ siteTitle, menuLinks}) {
         )
       )}
       <Box>
-      <img src={search} style={{maxWidth: "70px"}} />
+      <Link to="/search">
+        <img src={search} style={{maxWidth: "70px"}} />
+      </Link>
       </Box>
       <Box style={{ padding: "1.2rem", right: "0", position: "absolute" }} >
         <label class="switch">
