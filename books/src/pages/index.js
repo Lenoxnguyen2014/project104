@@ -59,12 +59,62 @@ function IndexPage({data}) {
   <Box bg='primary' >
     <div style={{padding: "6vw", boxShadow: "5px 10px"}}>
       <p>
-    His problem(s) started at age 38: mid-life crisis. He called ‘em male menopause. They came one after another for the rest of his life. No, he did not buy a red convertible and chase women in their twenties… well, not at first. Kenny rolled from one mid-life crisis to next, from one weird experience to another. Now he’s an “older gentleman” who has gone well beyond his mid-life. Now he has one geezer crises, after another. After all this rocking and rolling, Kenny is certain of one thing. He doesn’t count. You count. His life isn’t all that important. Yours is. He created this website in hopes that he could amuse you and help you learn a bit of what he has learned. These are his words:
-	“When you were in high school, did you study the poem Ulysses, by Tennyson? It’s about the legendary explorer of ancient Greece, who fought the brave fight, won some battles and lost others. In the poem, we see Odysseus, old and worn out, yearning for one more adventure: “I cannot rest from travel: I will drink life to the lees…” 
- I invite you to join me for one more adventure, always remembering: “…that which we are, we are, one equal temper of heroic hearts, made weak by time and fate, but strong in will to strive, to seek, to find and not to yield.”
-Our adventures will be literary. We will follow trails of ancient wisdom-words into the unknown realm of our inner worlds.
+    
+Kenny's  “best before” date has long since passed. Now he is certain of just one thing: he doesn’t count.
+
+You count. His life isn’t all that important. Yours is.
+
+He created this website in hopes that he could amuse you and help you learn a bit of what he has learned. 
+
+	When you were in high school, did you study the poem Ulysses, by Tennyson? Well, Kenny changed it! Shortened it and re-wrote it. Yes, he can do that, because he's still alive and Alfred Lord Tennyson is not. Here goes:
+
+<p style={{textAlign:"right"}}>
+
+I cannot rest from travel; I will drink life to the lees. <br/>
+All times greatly,  I have suffered and enjoyed, <br/>
+Both with those who loved me, <br />
+And alone. 
+</p>
+<p style={{textAlign:"right"}}>
+
+We are a part of all that we have met.<br />
+Yet all experience is an open road,<br/>
+In an untraveled world whose boundaries fade <br/>
+For ever and for ever as we move.<br/>
+How dull it is to stop, to make an end, <br/>
+To rust unburnished in some home, and not to shine in use!<br/>
+</p>
+<p style={{textAlign:"right"}}>
+This grey spirit, <br/>
+Yearning in desire, <br/>
+To follow knowledge like a sinking star, <br/>
+Beyond the utmost bound of human thought,<br/>
+Invites you, <br/>
+Souls that have toiled, and wrought, and thought,<br/>
+That ever, with a frolic welcome took the thunder and the sunshine, and opposed:<br/>
+</p>
+<p style={{textAlign:"right"}}>
+Free hearts, free minds — you and I are old;<br/>
+Old age hath yet it's honour and it's toil.<br/>
+Death closes all; but something ere the end,<br/>
+Some work of noble note, may yet be done,<br/>
+Not unbecoming those who strove with gods.<br/>
+</p>
+<p style={{textAlign:"right"}}>
+My purpose holds <br/>
+To drive beyond the sunset and the sky; <br/>
+To drive beyond the western stars, until I die. <br/>
+</p>
+<p style={{textAlign:"right"}}>
+We are not now that strength which in old days <br/>
+Moved earth and heaven. That which we are, we are: <br/>
+One equal temper of heroic hearts,<br/>
+Made weak by time and fate, but strong in will <br/>
+To strive, to seek, to find, and not to yield. <br/>
+Our adventures will be literary. We will follow roads of ancient wisdom-words into the unknown realm of our inner worlds.
+</p>
     </p>
-    <p>
+    <p style={{textAlign:"right"}}>
     Kenny DN
     </p>
     </div>
