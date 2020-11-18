@@ -74,6 +74,7 @@ module.exports = {
         chunkSize: 10000, // default: 1000
         enablePartialUpdates: true,
         concurrentQueries: false, // default: true
+        skipIndexing: true, // default: false, useful for e.g. preview deploys or local development
         matchFields: ['slug', 'modified'], // Array<String> overrides main match fields, optional
       },
     },
