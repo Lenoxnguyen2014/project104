@@ -95,7 +95,7 @@ That ever, with a frolic welcome took the thunder and the sunshine, and opposed:
 </p>
 <p style={{textAlign:"right"}}>
 Free hearts, free minds — you and I are old;<br/>
-Old age hath yet it's honour and it's toil.<br/>
+Old age hath yet its honour and its toil.<br/>
 Death closes all; but something ere the end,<br/>
 Some work of noble note, may yet be done,<br/>
 Not unbecoming those who strove with gods.<br/>
