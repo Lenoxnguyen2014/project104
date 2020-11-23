@@ -111,10 +111,10 @@ Moved earth and heaven. That which we are, we are: <br/>
 One equal temper of heroic hearts,<br/>
 Made weak by time and fate, but strong in will <br/>
 To strive, to seek, to find, and not to yield. <br/>
-Our adventures will be literary. We will follow roads of ancient wisdom-words into the unknown realm of our inner worlds.
 </p>
+Our adventures will be literary. We will follow roads of ancient wisdom-words into the unknown realm of our inner worlds.
     </p>
-    <p style={{textAlign:"right"}}>
+    <p style={{textAlign:"left"}}>
     Kenny DN
     </p>
     </div>
